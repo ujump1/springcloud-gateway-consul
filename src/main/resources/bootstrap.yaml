@@ -22,13 +22,13 @@ spring:
       - id: producer
         uri: lb://spring-cloud-consul-producer #lb://服务名或者直接url地址
         predicates:
-        - Path=/api-gateway/producer/**
+        - Path=/api-gateway/spring-cloud-consul-producer/**
         filters:
         - StripPrefix= 2 #剥离路径，这里要把api-gateway/producer剥离掉
       - id: consumer
         uri: lb://spring-cloud-consul-consumer #lb://服务名或者直接url地址
         predicates:
-        - Path=/api-gateway/consumer/**
+        - Path=/api-gateway/spring-cloud-consul-consumer/**
         filters:
         - StripPrefix= 2 #剥离路径，这里要把api-gateway/producer剥离掉
 
